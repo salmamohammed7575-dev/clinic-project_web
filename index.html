@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>🏥 Hospital System</h1>
+    <nav class="tabs">
+      <button class="tab active" data-target="doctors-section">Doctors</button>
+      <button class="tab" data-target="patients-section">Patients</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div id="message" class="message" role="status"></div>
+
+    <!-- ===== Doctors ===== -->
+    <section id="doctors-section" class="panel active">
+      <div class="card">
+        <h2>Add Doctor</h2>
+        <form id="doctor-form" class="form-grid">
+          <label>Doctor ID
+            <input type="number" id="doctor-id" required>
+          </label>
+          <label>Name
+            <input type="text" id="doctor-name" required>
+          </label>
+          <label>Age
+            <input type="number" id="doctor-age" min="0" required>
+          </label>
+          <label>Phone
+            <input type="text" id="doctor-phone" required>
+          </label>
+          <label>Specialization
+            <input type="text" id="doctor-spec" required>
+          </label>
+          <button type="submit" class="btn primary">Add Doctor</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Search Doctor by ID</h2>
+        <form id="doctor-search-form" class="search-row">
+          <input type="number" id="doctor-search-id" placeholder="Enter doctor ID" required>
+          <button type="submit" class="btn primary">Search</button>
+          <button type="button" id="doctor-search-reset" class="btn">Show All</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Doctors List</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>ID</th><th>Name</th><th>Age</th><th>Phone</th><th>Specialization</th></tr>
+            </thead>
+            <tbody id="doctors-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Patients ===== -->
+    <section id="patients-section" class="panel">
+      <div class="card">
+        <h2>Add Patient</h2>
+        <form id="patient-form" class="form-grid">
+          <label>Name
+            <input type="text" id="patient-name" required>
+          </label>
+          <label>Age
+            <input type="number" id="patient-age" min="0" required>
+          </label>
+          <label>Phone
+            <input type="text" id="patient-phone" required>
+          </label>
+          <label>Address
+            <input type="text" id="patient-address" required>
+          </label>
+          <button type="submit" class="btn primary">Add Patient</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Search Patient by Name</h2>
+        <form id="patient-search-form" class="search-row">
+          <input type="text" id="patient-search-name" placeholder="Enter patient name" required>
+          <button type="submit" class="btn primary">Search</button>
+          <button type="button" id="patient-search-reset" class="btn">Show All</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h2>Patients List</h2>
+          <button type="button" id="sort-patients" class="btn">Sort by Age</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Name</th><th>Age</th><th>Phone</th><th>Address</th></tr>
+            </thead>
+            <tbody id="patients-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

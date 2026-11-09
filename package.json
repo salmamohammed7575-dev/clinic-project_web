@@ -1,0 +1,10 @@
+{
+  "name": "hospital-system",
+  "version": "1.0.0",
+  "description": "Hospital System web app (Node.js + HTML/CSS/JS)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT"
+}
